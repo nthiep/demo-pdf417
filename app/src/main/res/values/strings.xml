@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Demo PDF417</string>
+    <string name="title_scan">Scan</string>
+    <string name="title_results">Results</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_scan_result">Scan Result</string>
+
+    <string name="require_camera_permission">Require camera permission</string>
+</resources>

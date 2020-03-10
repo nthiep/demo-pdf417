@@ -38,4 +38,12 @@
         android:textColor="@color/colorPrimary"
         android:text="Version 1.0" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fragment_title_margin"
+        android:layout_marginTop="@dimen/fragment_title_margin"
+        android:textColor="@color/colorPrimary"
+        android:text="contact: hi@hiep.vn" />
+
 </LinearLayout>

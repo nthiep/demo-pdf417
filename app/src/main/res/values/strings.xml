@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Demo PDF417</string>
+    <string name="app_name">PDF417 Scanner</string>
     <string name="title_scan">Scan</string>
     <string name="title_results">Results</string>
     <string name="title_settings">Settings</string>

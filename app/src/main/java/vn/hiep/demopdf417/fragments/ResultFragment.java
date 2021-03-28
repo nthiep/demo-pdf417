@@ -31,6 +31,7 @@ import vn.hiep.demopdf417.adapter.ResultAdapter;
  */
 public class ResultFragment extends Fragment {
     private RecyclerView mListResults;
+    private View mEmptyView;
     private ResultAdapter resultAdapter;
     private ArrayList<String> listResult = new ArrayList<>();
 
@@ -63,6 +64,7 @@ public class ResultFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_result, container, false);
+        mEmptyView = view.findViewById(R.id.tvEmpty);
         mListResults = view.findViewById(R.id.rc_results);
         mListResults.setLayoutManager(new LinearLayoutManager(getActivity()));
         resultAdapter = new ResultAdapter(listResult);
@@ -100,6 +102,10 @@ public class ResultFragment extends Fragment {
     }
 
     public void addResult(String result) {
+        if (mListResults.getVisibility() == View.GONE) {
+            mListResults.setVisibility(View.VISIBLE);
+            mEmptyView.setVisibility(View.GONE);
+        }
         listResult.add(0, result);
         resultAdapter.notifyDataSetChanged();
     }

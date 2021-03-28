@@ -3,29 +3,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".fragments.ResultFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/fragment_title_margin"
-        android:layout_marginTop="@dimen/fragment_title_margin"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
+        android:layout_marginStart="@dimen/title_margin"
+        android:layout_marginTop="@dimen/title_margin"
+        android:text="@string/title_results"
+        android:textColor="@color/colorTextGrayLight"
         android:textSize="@dimen/fragment_title_text_size"
-        android:text="@string/title_results" />
+        android:textStyle="bold" />
 
     <View
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_marginTop="@dimen/fragment_title_margin_top"
+        android:layout_marginBottom="@dimen/fragment_title_margin_top"
         android:background="@color/colorPrimary" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_results"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/fragment_title_margin_top" />
+        android:layout_gravity="center"
+        android:gravity="center">
 
+        <TextView
+            android:id="@+id/tvEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/fragment_title_margin"
+            android:layout_marginTop="@dimen/fragment_title_margin"
+            android:gravity="center"
+            android:text="@string/text_empty_result"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_results"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </RelativeLayout>
 </LinearLayout>

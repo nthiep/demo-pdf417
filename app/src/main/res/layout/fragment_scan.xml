@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ScanFragment">
 
     <Button
@@ -17,8 +18,15 @@
         android:textStyle="bold"
         android:text="@string/require_camera_permission" />
 
-    <FrameLayout
-        android:id="@+id/content_frame"
+    <me.dm7.barcodescanner.zxing.ZXingScannerView
+        android:id="@+id/scannerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:borderColor="#FFF"
+        app:borderLength="24dp"
+        app:borderWidth="4dp"
+        app:laserColor="#00ff77"
+        app:maskColor="@android:color/transparent"
+        app:roundedCorner="false"
+        app:squaredFinder="true"/>
 </FrameLayout>

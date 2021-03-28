@@ -3,20 +3,18 @@ package vn.hiep.demopdf417.fragments;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
@@ -72,9 +70,7 @@ public class ScanFragment extends Fragment implements ZXingScannerView.ResultHan
         btnRequirePermission.setVisibility(View.GONE);
         btnRequirePermission.setOnClickListener(v -> requestCameraPermission());
 
-        ViewGroup contentFrame = view.findViewById(R.id.content_frame);
-        mScannerView = new ZXingScannerView(getActivity());
-        contentFrame.addView(mScannerView);
+        mScannerView = view.findViewById(R.id.scannerView);
 
         return view;
     }

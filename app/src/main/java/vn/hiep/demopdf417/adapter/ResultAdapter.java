@@ -3,6 +3,7 @@ package vn.hiep.demopdf417.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,7 +32,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ItemVH> {
     public void onBindViewHolder(ItemVH holder, int position) {
         String result = listResult.get(position);
         holder.bind(result);
-        holder.itemView.setOnClickListener(view -> {
+        holder.btnCopy.setOnClickListener(view -> {
             if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(result);
             }
@@ -43,9 +44,11 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ItemVH> {
     }
     static class ItemVH extends RecyclerView.ViewHolder {
         private TextView tvName;
+        private Button btnCopy;
         ItemVH(View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tvResult);
+            btnCopy = itemView.findViewById(R.id.btnCopy);
         }
         void bind(String result) {
             tvName.setText(result);
